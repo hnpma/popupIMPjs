@@ -1,0 +1,624 @@
+
+C:\Users\User\Documents\popupIMPjs
+<!--This does NOT work with overlay and even without
+   the use of overlay,
+   css margin: left = 240px when screen is minimized
+   the 'X' appears out of the pop up box-->
+
+==++=2:15 AM 7/3/2024 +====
+
+<!DOCTYPE html>
+<!--This does NOT work with overlay and even without
+   the use of overlay,
+
+   css margin: left = 240px when screen is minimized
+   the 'X' appears out of the pop up box-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+                   initial-scale=1.0"
+        />
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+    
+        <h3>
+            Create popup box using HTML and separate CSS and script.js file
+        </h3>
+        <button id="myButton">Click me</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+               <button id="closePopup" class="close-button">&times</button>
+                    
+                <h1 style="color: green"> GeekforGeeks !  </h1>
+                <p>This is a popup box! I coded this program to make this box pop up.My husband helped a lot</p>
+
+            </div>
+        </div>
+       <!-- <div id="overlay"></div> -->
+      
+    </body>
+</html>
+
+
+
+===++ end of 2:15 AM 7/3/2024+++==
+
+
+==++ 1:15 AM 7/3/2024 css ++===
+
+
+.popup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4  );
+    display: none;
+   
+}
+.popup-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888888; 
+    width: 30%;
+    font-weight: bolder; 
+}
+.popup-content button {
+    /* display: block;
+    margin: 0 auto; */
+    margin-left: 370px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+
+}
+.show {
+    display: block;
+}
+
+ #overlay {
+   position: fixed;
+   /* opacity: 0;*/
+   opacity: 0;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0,0,0,.5);
+ }
+
+
+#overlay.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+
+===+++ end of css 1:16 AM 7/3/2024 ++===
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+                   initial-scale=1.0"
+        />
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+    
+        <h3>
+            Create popup box using HTML and separate CSS and script.js file
+        </h3>
+        <button id="myButton">Click me</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <button id="closePopup" class="close-button">&times;</button>
+                <h1 style="color: green"> GeekforGeeks !        </h1>
+                <p>This is a popup box!</p>
+
+            </div>
+        </div>
+
+      
+    </body>
+</html>
+
+
+
+===+++++++++++++=============
+            myButton.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.add("show");
+                }
+            );
+            closePopup.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.remove(
+                        "show"
+                    );
+                }
+            );
+            window.addEventListener(
+                "click",
+                function (event) {
+                    if (event.target == myPopup) {
+                        myPopup.classList.remove(
+                            "show"
+                        );
+                    }
+                }
+            );
+ 
+
+
+ 
+            myButton.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.add("show");
+                }
+            );
+            closePopup.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.remove(
+                        "show"
+                    );
+                }
+            );
+            window.addEventListener(
+                "click",
+                function (event) {
+                    if (event.target == myPopup) {
+                        myPopup.classList.remove(
+                            "show"
+                        );
+                    }
+                }
+            );
+
+
+
+======+++++==============
+
+
+
+            .popup {
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(
+                    0,
+                    0,
+                    0,
+                    0.4
+                );
+                display: none;
+            }
+            .popup-content {
+                background-color: white;
+                margin: 10% auto;
+                padding: 20px;
+                border: 1px solid #888888;
+                width: 30%;
+                font-weight: bolder;
+            }
+            .popup-content button {
+                /* display: block;
+                margin: 0 auto; */
+                cursor: pointer;
+                border: none;
+                outline: none;
+                background: none;
+                font-size: 1.25rem;
+                font-weight: bold;
+
+            }
+            .show {
+                display: block;
+            }
+
+
+
+
+==++++++html 1:08 AM 7/3/2024_===++++
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+                   initial-scale=1.0"
+        />
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+    
+        <h3>
+            Create popup box using HTML and separate CSS and script.js file
+        </h3>
+        <button id="myButton">Click me</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <button id="closePopup" class="close-button">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspX</button>
+                    
+                <h1 style="color: green"> GeekforGeeks !        </h1>
+                <p>This is a popup box!</p>
+
+            </div>
+        </div>
+
+      
+    </body>
+</html>
+
+
+===++end of html 1:08 AM 7/3/2024++++===
+
+==+++html  12:00 AM 7/3/2024 ++===
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+                   initial-scale=1.0"
+        />
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+    
+        <h3>
+            Create popup box using HTML and separate CSS
+        </h3>
+        <button id="myButton">Click me</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <h1 style="color: green">
+                    GeekforGeeks !
+                </h1>
+                <p>This is a popup box!</p>
+                <button id="closePopup">
+                    Close
+                </button>
+            </div>
+        </div>
+
+        <script>
+            myButton.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.add("show");
+                }
+            );
+            closePopup.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.remove(
+                        "show"
+                    );
+                }
+            );
+            window.addEventListener(
+                "click",
+                function (event) {
+                    if (event.target == myPopup) {
+                        myPopup.classList.remove(
+                            "show"
+                        );
+                    }
+                }
+            );
+        </script>
+    </body>
+</html>
+
+
+
+<!--  ROUGH code works below from G2G-->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+                   initial-scale=1.0"
+        />
+        <style>
+            .popup {
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(
+                    0,
+                    0,
+                    0,
+                    0.4
+                );
+                display: none;
+            }
+            .popup-content {
+                background-color: white;
+                margin: 10% auto;
+                padding: 20px;
+                border: 1px solid #888888;
+                width: 30%;
+                font-weight: bolder;
+            }
+            .popup-content button {
+                display: block;
+                margin: 0 auto;
+            }
+            .show {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+    
+        <h3>
+            Create popup box using HTML and CSS
+        </h3>
+        <button id="myButton">Click me</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <h1 style="color: green">
+                    GeekforGeeks !
+                </h1>
+                <p>This is a popup box!</p>
+                <button id="closePopup">
+                    Close
+                </button>
+            </div>
+        </div>
+
+        <script>
+            myButton.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.add("show");
+                }
+            );
+            closePopup.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.remove(
+                        "show"
+                    );
+                }
+            );
+            window.addEventListener(
+                "click",
+                function (event) {
+                    if (event.target == myPopup) {
+                        myPopup.classList.remove(
+                            "show"
+                        );
+                    }
+                }
+            );
+        </script>
+    </body>
+</html> -->
+
+==++ end of html 12:00 AM 7/3/2024 ++==
+
+===+++ css 12:01 AM 7/3/2024 ++===
+
+
+            .popup {
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(
+                    0,
+                    0,
+                    0,
+                    0.4
+                );
+                display: none;
+            }
+            .popup-content {
+                background-color: white;
+                margin: 10% auto;
+                padding: 20px;
+                border: 1px solid #888888;
+                width: 30%;
+                font-weight: bolder;
+            }
+            .popup-content button {
+                display: block;
+                margin: 0 auto;
+            }
+            .show {
+                display: block;
+            }
+
+
+===++= end of css 12:01 AM 7/3/2024 ++===
+
+
+
+
+
+
+
+
+
+
+
+<!--  ROUGH code works below from G2G-->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+                   initial-scale=1.0"
+        />
+        <style>
+            .popup {
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(
+                    0,
+                    0,
+                    0,
+                    0.4
+                );
+                display: none;
+            }
+            .popup-content {
+                background-color: white;
+                margin: 10% auto;
+                padding: 20px;
+                border: 1px solid #888888;
+                width: 30%;
+                font-weight: bolder;
+            }
+            .popup-content button {
+                display: block;
+                margin: 0 auto;
+            }
+            .show {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+    
+        <h3>
+            Create popup box using HTML and CSS
+        </h3>
+        <button id="myButton">Click me</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <h1 style="color: green">
+                    GeekforGeeks !
+                </h1>
+                <p>This is a popup box!</p>
+                <button id="closePopup">
+                    Close
+                </button>
+            </div>
+        </div>
+
+        <script>
+            myButton.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.add("show");
+                }
+            );
+            closePopup.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.remove(
+                        "show"
+                    );
+                }
+            );
+            window.addEventListener(
+                "click",
+                function (event) {
+                    if (event.target == myPopup) {
+                        myPopup.classList.remove(
+                            "show"
+                        );
+                    }
+                }
+            );
+        </script>
+    </body>
+</html> -->

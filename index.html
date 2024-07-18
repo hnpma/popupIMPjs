@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<!--This does NOT work with overlay and
+ even without  the use of overlay,
+   css margin: left = 240px when screen is minimized
+   the 'X' appears out of the pop up box-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+                   initial-scale=1.0"
+        />
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+    
+        <h3>
+            Create popup box using HTML and separate CSS and script.js file
+        </h3>
+        <button id="myButton">Click me</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+               <button id="closePopup" class="close-button">&times</button>
+                    
+                <h1 style="color: green"> GeekforGeeks !  </h1>
+                <p>This is a popup box! I coded this program to make this box pop up.My husband helped a lot</p>
+
+            </div>
+        </div>
+       <!-- <div id="overlay"></div> -->
+      
+    </body>
+</html>
+
